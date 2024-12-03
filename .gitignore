@@ -23,3 +23,8 @@ go.work.sum
 
 # env file
 .env
+
+### JetBrains ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+
+.idea/
