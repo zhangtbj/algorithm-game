@@ -12,4 +12,5 @@
 |     | [27. 移除元素 (remove-element)](https://leetcode.cn/problems/remove-element/description/)                                                                                                    | [题解](remove-element/README.md)                                          |
 |     | [33. 搜索旋转排序数组 (search-in-rotated-sorted-array)](https://leetcode.cn/problems/search-in-rotated-sorted-array/description/)                                                                | [题解](search-in-rotated-sorted-array/README.md)                          |
 |     | [34. 在排序数组中查找元素的第一个和最后一个位置 (find-first-and-last-position-of-element-in-sorted-array)](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/) | [题解](find-first-and-last-position-of-element-in-sorted-array/README.md) |
+|     | [35. 搜索插入位置 (search-insert-position)](https://leetcode.cn/problems/search-insert-position/description/)                                                                                  | [题解](search-insert-position/README.md)                                  |
 
