@@ -5,32 +5,25 @@ import (
 )
 
 func main() {
-	var nums = []int{4, 5}
-	val := 4
+	var nums = []int{2}
+	val := 3
 	//var nums = []int{0, 1, 2, 2, 3, 0, 4, 2}
 	//val := 2
 
 	fmt.Println(removeElementTest(nums, val))
 }
 
+// 快慢指针
+// 视频方法：https://www.bilibili.com/video/BV12A4y1Z7LP?spm_id_from=333.788.videopod.sections&vd_source=f881def7ea7cf10e6fa73627efe940dd
 func removeElementTest(nums []int, val int) int {
-	var pos, checker int
+	var slow int
 
-	for pos <= len(nums)-1 {
-		for nums[checker] == val {
-			checker++
-			if checker == len(nums) {
-				return pos
-			}
-		}
-		nums[pos], nums[checker] = nums[checker], nums[pos]
-		pos++
-		checker++
-
-		if checker >= len(nums) {
-			break
+	for fast := 0; fast < len(nums); fast++ {
+		if nums[fast] != val {
+			nums[slow] = nums[fast]
+			slow++
 		}
 	}
 
-	return pos
+	return slow
 }
