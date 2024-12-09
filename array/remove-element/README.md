@@ -4,6 +4,9 @@
 
 给定一个数组 `nums` 和一个值 `val`，实现一个函数移除数组中所有等于 `val` 的元素，并返回移除后的数组长度。要求在原地修改数组，空间复杂度为 O(1)。
 
+## 讲解视频
+https://www.bilibili.com/video/BV12A4y1Z7LP?spm_id_from=333.788.videopod.sections&vd_source=f881def7ea7cf10e6fa73627efe940dd
+
 ---
 
 ## 解决方案
