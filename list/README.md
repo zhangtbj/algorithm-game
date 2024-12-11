@@ -1,0 +1,5 @@
+# 算法与题目对照表
+
+| 算法    | 对应题目                                                                                                                                                                                                                                                                                       | 题解                                          |
+|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|
+| 虚拟头节点 | [<img src="../images/video.jpg" width="20"/>](https://www.bilibili.com/video/BV18B4y1s7R9?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd) [203. 移除链表元素 (remove-linked-list-elements)](https://leetcode.cn/problems/remove-linked-list-elements/description/) | [题解](remove-linked-list-elements/README.md) |
