@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+//type ListNode struct {
+//	Val  int
+//	Next *ListNode
+//}
+
 func main() {
 	var nums = []int{1, 2, 6, 3, 4, 5, 6}
 	head := &ListNode{Val: nums[0]}
