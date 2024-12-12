@@ -4,6 +4,9 @@
 
 给定一个整数数组 `nums` 和一个目标值 `target`，找到数组中两个数字的和等于目标值，返回它们的下标。
 
+## 视频讲解
+https://www.bilibili.com/video/BV1aT41177mK?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd
+
 ## 解法总结
 
 - 使用哈希表存储已遍历的数字及其索引。

@@ -9,13 +9,26 @@ func main() {
 	fmt.Println(twoSum(nums, target))
 }
 
+//func twoSum(nums []int, target int) []int {
+//	var numsMap = make(map[int]int)
+//	for i := range nums {
+//		another := target - nums[i]
+//
+//		if _, ok := numsMap[another]; ok {
+//			return []int{numsMap[another], i}
+//		} else {
+//			numsMap[nums[i]] = i
+//		}
+//	}
+//
+//	return nil
+//}
+
 func twoSum(nums []int, target int) []int {
 	var numsMap = make(map[int]int)
 	for i := range nums {
-		another := target - nums[i]
-
-		if _, ok := numsMap[another]; ok {
-			return []int{numsMap[another], i}
+		if _, ok := numsMap[target-nums[i]]; ok {
+			return []int{numsMap[target-nums[i]], i}
 		} else {
 			numsMap[nums[i]] = i
 		}
