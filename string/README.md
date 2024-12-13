@@ -1,6 +1,7 @@
 # 算法与题目对照表
 
-| 算法  | 对应题目                                                                                                                                                                                                                                                                | 题解                             |
-|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
-| 双指针 | [<img src="../images/video.jpg" width="20"/>](https://www.bilibili.com/video/BV1fV4y17748/?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd) [242. 有效的字母异位词 (reverse-string)](https://leetcode.cn/problems/reverse-string/description/) | [题解](reverse-string/README.md) |
+| 算法  | 对应题目                                                                                                                                                                                                                                                                      | 题解                                |
+|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| 双指针 | [<img src="../images/video.jpg" width="20"/>](https://www.bilibili.com/video/BV1fV4y17748/?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd) [344. 反转字符串 (reverse-string)](https://leetcode.cn/problems/reverse-string/description/)          | [题解](reverse-string/README.md)    |
+|     | [<img src="../images/video.jpg" width="20"/>](https://www.bilibili.com/video/BV1dT411j7NN/?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd) [541. 反转字符串 II (reverse-string-ii)](https://leetcode.cn/problems/reverse-string-ii/description/) | [题解](reverse-string-ii/README.md) |
 
