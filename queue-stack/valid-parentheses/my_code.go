@@ -1,45 +1,41 @@
 package main
 
-//type MyQueue struct {
-//	List []int
-//}
-//
-//
-//func Constructor() MyQueue {
-//	return MyQueue{}
-//}
-//
-//
-//func (this *MyQueue) Push(x int)  {
-//	this.List = append(this.List, x)
-//}
-//
-//
-//func (this *MyQueue) Pop() int {
-//	first := this.List[0]
-//	this.List = this.List[1:]
-//	return first
-//}
-//
-//
-//func (this *MyQueue) Peek() int {
-//	return this.List[0]
-//}
-//
-//
-//func (this *MyQueue) Empty() bool {
-//	if len(this.List) > 0 {
-//		return false
-//	} else {
-//		return true
-//	}
-//}
+import "fmt"
 
-/**
- * Your MyQueue object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(x);
- * param_2 := obj.Pop();
- * param_3 := obj.Peek();
- * param_4 := obj.Empty();
- */
+func main() {
+	s := "([)]"
+
+	fmt.Println(isValid(s))
+}
+
+func isValid(s string) bool {
+	ss := []byte(s)
+	var test []byte
+
+	for i := range ss {
+		if len(test) == 0 || !isPair(ss[i], test[len(test)-1]) {
+			test = append(test, ss[i])
+		} else {
+			if len(test) > 1 {
+				test = test[:len(test)-1]
+			} else {
+				test = []byte{}
+			}
+		}
+	}
+
+	return len(test) == 0
+}
+
+func isPair(old, new byte) bool {
+	if new == '(' && old == ')' {
+		return true
+	}
+	if new == '[' && old == ']' {
+		return true
+	}
+	if new == '{' && old == '}' {
+		return true
+	}
+	return false
+}
