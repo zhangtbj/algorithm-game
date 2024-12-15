@@ -9,10 +9,10 @@ func main() {
 	nums := []int{1, 1, 1, 2, 2, 3}
 	k := 2
 
-	fmt.Println(topKFrequent(nums, k))
+	fmt.Println(topKFrequentTest(nums, k))
 }
 
-func topKFrequent(nums []int, k int) []int {
+func topKFrequentTest(nums []int, k int) []int {
 	numsMap := map[int]int{}
 	var result []int
 
