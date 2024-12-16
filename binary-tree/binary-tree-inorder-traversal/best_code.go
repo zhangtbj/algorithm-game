@@ -57,19 +57,21 @@ package main
 //	root := BuildTreeFromArray(arr)
 //	//fmt.Println("Build binary-tree:")
 //
-//	result := preorderTraversal(root)
+//	result := postorderTraversal(root)
 //
 //	fmt.Println(result)
 //}
 //
-//func preorderTraversal(root *TreeNode) []int {
-//	var test []int
+//func postorderTraversal(root *TreeNode) []int {
+//	var result []int
 //	if root == nil {
-//		return test
+//		return result
 //	}
 //
-//	test = append(test, root.Val)
-//	test = append(test, preorderTraversal(root.Left)...)
-//	test = append(test, preorderTraversal(root.Right)...)
-//	return test
+//	result = append(result, postorderTraversal(root.Left)...)
+//	result = append(result, postorderTraversal(root.Right)...)
+//	result = append(result, root.Val)
+//
+//	return result
+//}
 //}
