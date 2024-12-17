@@ -53,47 +53,31 @@ func printTree(root *TreeNode) {
 }
 
 func main() {
-	arr := []interface{}{3, 9, 20, nil, nil, 15, 7}
+	arr := []interface{}{1, 2, 2, 3, 4, 4, 3}
 	root := BuildTreeFromArray(arr)
 	//fmt.Println("Build binary-tree:")
 
-	result := levelOrder(root)
+	result := isSymmetric(root)
 
 	fmt.Println(result)
 }
 
-func levelOrder(root *TreeNode) [][]int {
-	var nodes []*TreeNode
-	var result [][]int
-	var size = 1
+func isSymmetric(root *TreeNode) bool {
+	return compare(root.Left, root.Right)
+}
 
-	if root == nil {
-		return result
+func compare(left, right *TreeNode) bool {
+	if left == nil && right != nil {
+		return false
+	} else if left != nil && right == nil {
+		return false
+	} else if left == nil && right == nil {
+		return true
+	} else if left.Val != right.Val {
+		return false
 	} else {
-		nodes = append(nodes, root)
+		outside := compare(left.Left, right.Right)
+		inside := compare(left.Right, right.Left)
+		return outside && inside
 	}
-
-	for len(nodes) > 0 {
-		var subResult []int
-		var subSize int
-		for size > 0 {
-			pop := nodes[0]
-			nodes = nodes[1:]
-			size--
-			subResult = append(subResult, pop.Val)
-
-			if pop.Left != nil {
-				nodes = append(nodes, pop.Left)
-				subSize++
-			}
-			if pop.Right != nil {
-				nodes = append(nodes, pop.Right)
-				subSize++
-			}
-		}
-		result = append(result, subResult)
-		size += subSize
-	}
-
-	return result
 }

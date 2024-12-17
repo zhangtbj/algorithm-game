@@ -53,47 +53,26 @@ func printTree(root *TreeNode) {
 }
 
 func main() {
-	arr := []interface{}{3, 9, 20, nil, nil, 15, 7}
+	arr := []interface{}{4, 2, 7, 1, 3, 6, 9}
 	root := BuildTreeFromArray(arr)
 	//fmt.Println("Build binary-tree:")
 
-	result := levelOrder(root)
+	result := invertTree(root)
 
 	fmt.Println(result)
 }
 
-func levelOrder(root *TreeNode) [][]int {
-	var nodes []*TreeNode
-	var result [][]int
-	var size = 1
-
+func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
-		return result
-	} else {
-		nodes = append(nodes, root)
+		return nil
 	}
 
-	for len(nodes) > 0 {
-		var subResult []int
-		var subSize int
-		for size > 0 {
-			pop := nodes[0]
-			nodes = nodes[1:]
-			size--
-			subResult = append(subResult, pop.Val)
+	// 前序遍历
+	root.Left, root.Right = root.Right, root.Left
+	invertTree(root.Left)
+	invertTree(root.Right)
 
-			if pop.Left != nil {
-				nodes = append(nodes, pop.Left)
-				subSize++
-			}
-			if pop.Right != nil {
-				nodes = append(nodes, pop.Right)
-				subSize++
-			}
-		}
-		result = append(result, subResult)
-		size += subSize
-	}
+	// 不推荐使用中序遍历
 
-	return result
+	return root
 }

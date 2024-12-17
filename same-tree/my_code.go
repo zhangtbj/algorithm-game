@@ -53,47 +53,28 @@ func printTree(root *TreeNode) {
 }
 
 func main() {
-	arr := []interface{}{3, 9, 20, nil, nil, 15, 7}
-	root := BuildTreeFromArray(arr)
-	//fmt.Println("Build binary-tree:")
+	pArr := []interface{}{1, 2, 3}
+	p := BuildTreeFromArray(pArr)
+	qArr := []interface{}{1, 2, 3}
+	q := BuildTreeFromArray(qArr)
 
-	result := levelOrder(root)
+	result := isSameTree(p, q)
 
 	fmt.Println(result)
 }
 
-func levelOrder(root *TreeNode) [][]int {
-	var nodes []*TreeNode
-	var result [][]int
-	var size = 1
-
-	if root == nil {
-		return result
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q != nil {
+		return false
+	} else if p != nil && q == nil {
+		return false
+	} else if p == nil && q == nil {
+		return true
+	} else if p.Val != q.Val {
+		return false
 	} else {
-		nodes = append(nodes, root)
+		left := isSameTree(p.Left, q.Left)
+		right := isSameTree(p.Right, q.Right)
+		return left && right
 	}
-
-	for len(nodes) > 0 {
-		var subResult []int
-		var subSize int
-		for size > 0 {
-			pop := nodes[0]
-			nodes = nodes[1:]
-			size--
-			subResult = append(subResult, pop.Val)
-
-			if pop.Left != nil {
-				nodes = append(nodes, pop.Left)
-				subSize++
-			}
-			if pop.Right != nil {
-				nodes = append(nodes, pop.Right)
-				subSize++
-			}
-		}
-		result = append(result, subResult)
-		size += subSize
-	}
-
-	return result
 }
