@@ -15,6 +15,8 @@
 | 队列/栈 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5kunx3/) | [题解](queue-stack/README.md)   |                                                                    |                       |
 | 二分搜索 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5424v5/) | [题解](binary-search/README.md) |   
 | 二叉树 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5gv84r/) | [题解](binary-tree/README.md) |                                                                    |                       |
+| 回溯算法 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5licpe/) | [题解](backtracking/README.md) |                                                                    |                       |
+| 贪心算法 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5licpe/) | [题解](greedy/README.md) |                                                                    |                       |
 
 
 
