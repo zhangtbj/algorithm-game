@@ -17,7 +17,6 @@
 | 二叉树 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5gv84r/) | [题解](binary-tree/README.md) |                                                                    |                       |
 | 回溯算法 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5licpe/) | [题解](backtracking/README.md) |                                                                    |                       |
 | 贪心算法 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5licpe/) | [题解](greedy/README.md) |                                                                    |                       |
-
-
+| 动态规划 | [题目列表](https://leetcode.cn/leetbook/read/leetcode-cookbook/5zzyqd/) | [题解](dp/README.md) |                                                                    |                       |
 
 <img src="images/算法大纲.png" width="600"/>

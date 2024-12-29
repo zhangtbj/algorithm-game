@@ -5,26 +5,37 @@ import (
 )
 
 func main() {
-	var prices = []int{7, 1, 5, 3, 6, 4}
+	var ratings = []int{1, 0, 2}
 
-	fmt.Println(maxProfit(prices))
+	fmt.Println(candy(ratings))
 }
 
-func maxProfit(prices []int) int {
-	sum := 0
+func candy(ratings []int) int {
+	l := len(ratings)
+	isCandy := make([]int, l)
+	candySum := l
 
-	if len(prices) == 1 {
-		return sum
+	if l == 1 {
+		return candySum
 	}
 
-	for i := 0; i < len(prices)-1; i++ {
-		//if prices[i+1]-prices[i] > 0 {
-		//	sum += prices[i+1] - prices[i]
-		//}
-
-		// 简单解法
-		sum += max(prices[i+1]-prices[i], 0)
+	for i := 1; i < l; i++ {
+		if ratings[i] > ratings[i-1] {
+			isCandy[i] = isCandy[i-1] + 1
+		}
 	}
 
-	return sum
+	for i := l - 2; i >= 0; i-- {
+		if ratings[i] > ratings[i+1] {
+			isCandy[i] = max(isCandy[i], isCandy[i+1]+1)
+		}
+	}
+
+	fmt.Println(isCandy)
+	fmt.Println(candySum)
+	for i := range isCandy {
+		candySum += isCandy[i]
+	}
+	fmt.Println(candySum)
+	return candySum
 }
