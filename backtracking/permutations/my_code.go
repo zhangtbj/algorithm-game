@@ -2,51 +2,46 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-var result []string
-var path []string
+var result [][]int
+var path []int
+var used []bool
 
 func main() {
-	s := "aab"
-	restoreIpAddresses(s)
+	nums := []int{1, 2, 3}
+	permute(nums)
 	fmt.Println(result)
 }
 
-func restoreIpAddresses(s string) []string {
-	result = []string{}
-	path = []string{}
-	backtracking(s, path)
+func permute(nums []int) [][]int {
+	result = [][]int{}
+	path = []int{}
+	used = make([]bool, len(nums))
+	backtracking(nums, path, used)
 	return result
 }
 
-func backtracking(s string, path []string) {
-	if len(s) == 0 && len(path) == 4 {
-		subResult := path[0] + "." + path[1] + "." + path[2] + "." + path[3]
-		result = append(result, subResult)
+func backtracking(nums []int, path []int, used []bool) {
+	//fmt.Println(path)
+	if len(path) == len(nums) {
+		tmp := make([]int, len(path))
+		copy(tmp, path)
+		result = append(result, tmp)
 		return
 	}
 
-	for i := 0; i < len(s); i++ {
-		sNum := -1
-		subS := s[:i+1]
-		//fmt.Println(subS)
-		if len(subS) > 1 && subS[0] == '0' {
-			continue
-		}
-		sNum, _ = strconv.Atoi(subS)
-		if sNum >= 0 && sNum <= 255 {
-			path = append(path, subS)
-			//fmt.Println(path)
-			//fmt.Println(s[i+1:])
-			if len(path) > 4 {
-				break
-			}
-			backtracking(s[i+1:], path)
+	// if len(path) >= len(nums) {
+	//     return
+	// }
+
+	for i := 0; i < len(nums); i++ {
+		if !used[nums[i]] {
+			path = append(path, nums[i])
+			used[nums[i]] = true
+			backtracking(nums, path, used)
 			path = path[:len(path)-1]
-		} else {
-			continue
+			used[nums[i]] = false
 		}
 	}
 }

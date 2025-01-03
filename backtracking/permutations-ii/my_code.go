@@ -2,51 +2,46 @@ package main
 
 import (
 	"fmt"
-	"strconv"
+	"sort"
 )
 
-var result []string
-var path []string
+var result [][]int
+var path []int
+var used []bool
 
 func main() {
-	s := "aab"
-	restoreIpAddresses(s)
+	nums := []int{1, 1, 2}
+	permuteUnique(nums)
 	fmt.Println(result)
 }
 
-func restoreIpAddresses(s string) []string {
-	result = []string{}
-	path = []string{}
-	backtracking(s, path)
+func permuteUnique(nums []int) [][]int {
+	result = [][]int{}
+	path = []int{}
+	used = make([]bool, len(nums))
+	sort.Ints(nums)
+	backtracking(nums, path, used)
 	return result
 }
 
-func backtracking(s string, path []string) {
-	if len(s) == 0 && len(path) == 4 {
-		subResult := path[0] + "." + path[1] + "." + path[2] + "." + path[3]
-		result = append(result, subResult)
+func backtracking(nums []int, path []int, used []bool) {
+	if len(path) == len(nums) {
+		tmp := make([]int, len(path))
+		copy(tmp, path)
+		result = append(result, tmp)
 		return
 	}
 
-	for i := 0; i < len(s); i++ {
-		sNum := -1
-		subS := s[:i+1]
-		//fmt.Println(subS)
-		if len(subS) > 1 && subS[0] == '0' {
+	for i := 0; i < len(nums); i++ {
+		if i > 0 && nums[i-1] == nums[i] && !used[i-1] {
 			continue
 		}
-		sNum, _ = strconv.Atoi(subS)
-		if sNum >= 0 && sNum <= 255 {
-			path = append(path, subS)
-			//fmt.Println(path)
-			//fmt.Println(s[i+1:])
-			if len(path) > 4 {
-				break
-			}
-			backtracking(s[i+1:], path)
+		if !used[i] {
+			path = append(path, nums[i])
+			used[i] = true
+			backtracking(nums, path, used)
+			used[i] = false
 			path = path[:len(path)-1]
-		} else {
-			continue
 		}
 	}
 }
