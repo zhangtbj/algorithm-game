@@ -1,10 +1,15 @@
-# 300. 最长递增子序列
+# 1035. 不相交的线
 
 ## 题目大意
-给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+在两条独立的水平线上按给定的顺序写下 nums1 和 nums2 中的整数。
 
-子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的
-子序列 。
+现在，可以绘制一些连接两个数字 nums1[i] 和 nums2[j] 的直线，这些直线需要同时满足：
+
+nums1[i] == nums2[j]
+且绘制的直线不与任何其他连线（非水平线）相交。
+请注意，连线即使在端点也不能相交：每个数字只能属于一条连线。
+
+以这种方法绘制线条，并返回可以绘制的最大连线数。
 
 ## 视频讲解
-https://www.bilibili.com/video/BV1ng411J7xP?spm_id_from=333.788.player.switch&vd_source=f881def7ea7cf10e6fa73627efe940dd
+https://www.bilibili.com/video/BV1h84y1x7MP?spm_id_from=333.788.videopod.sections&vd_source=f881def7ea7cf10e6fa73627efe940dd
